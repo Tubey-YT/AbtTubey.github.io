@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cool Neon Website</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif;}
+    body {
+      min-height: 100vh;
+      background: linear-gradient(-45deg, #0f172a, #1e293b, #0ea5e9, #6366f1);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      color: white;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    @keyframes gradientShift {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    header {
+      height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      text-align: center; padding: 2rem;
+    }
+    h1 {
+      font-size: 3.5rem;
+      background: linear-gradient(90deg,#06b6d4,#a855f7,#f43f5e);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      animation: fadeInDown 1s ease;
+    }
+    p {
+      max-width: 600px; color: #e2e8f0;
+      margin-top: 1rem; animation: fadeIn 2s ease;
+    }
+    button {
+      margin-top: 2rem; padding: 1rem 2.5rem;
+      border: none; border-radius: 9999px;
+      background: linear-gradient(90deg,#06b6d4,#6366f1,#a855f7);
+      color: white; font-size: 1.1rem; cursor: pointer;
+      box-shadow: 0 0 20px rgba(99,102,241,0.7);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    button:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 30px rgba(168,85,247,0.9);
+    }
+
+    section {
+      padding: 5rem 2rem; 
+      display: grid; gap: 2rem;
+      max-width: 1200px; margin: auto;
+    }
+    @media(min-width: 768px) {
+      section {grid-template-columns: repeat(3, 1fr);}
+    }
+
+    .card {
+      backdrop-filter: blur(20px);
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 2rem; border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      transition: transform 0.4s, box-shadow 0.4s;
+      opacity: 0; transform: translateY(40px);
+      animation: fadeUp 1s forwards;
+    }
+    .card:hover {
+      transform: translateY(-15px) scale(1.05);
+      box-shadow: 0 0 40px rgba(6,182,212,0.7);
+    }
+
+    footer {
+      text-align: center; padding: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      color: #cbd5e1;
+    }
+    footer a {
+      margin: 0 15px; color: #38bdf8;
+      text-decoration: none; font-weight: bold;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+    footer a:hover {
+      color: #f472b6; text-shadow: 0 0 10px #f472b6;
+    }
+
+    @keyframes fadeIn {from{opacity:0} to{opacity:1}}
+    @keyframes fadeInDown {from{opacity:0; transform:translateY(-30px);} to{opacity:1; transform:translateY(0);}}
+    @keyframes fadeUp {to{opacity:1; transform:translateY(0);}}
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <header>
+    <h1>Welcome to the Neon Zone</h1>
+    <p>A futuristic showcase where design, creativity, and glowing pixels collide.</p>
+    <button onclick="document.getElementById('cards').scrollIntoView({behavior:'smooth'})">Enter</button>
+  </header>
+
+  <!-- Cards Section -->
+  <section id="cards">
+    <div class="card" style="animation-delay:0.2s">
+      <h2>⚡ Projects</h2>
+      <p>Explore cutting-edge experiments, apps, and creative builds with neon energy.</p>
+    </div>
+    <div class="card" style="animation-delay:0.4s">
+      <h2>🎨 Designs</h2>
+      <p>Glassmorphic interfaces, glowing gradients, and sleek futuristic aesthetics.</p>
+    </div>
+    <div class="card" style="animation-delay:0.6s">
+      <h2>🤝 Contact</h2>
+      <p>Let’s link up and collaborate on something that lights up the digital world.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Neon Zone</p>
+    <div>
+      <a href="#">GitHub</a>
+      <a href="#">Portfolio</a>
+      <a href="mailto:example@email.com">Email</a>
+    </div>
+  </footer>
+</body>
+</html>
